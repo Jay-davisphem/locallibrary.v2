@@ -1,0 +1,24 @@
+{
+  "name": "locallib",
+  "version": "0.0.0",
+  "private": true,
+  "scripts": {
+    "start": "node ./bin/www",
+    "start-prod": "NODE_ENV=production yarn start",
+    "devstart": "nodemon ./bin/www",
+    "serverstart": "DEBUG=locallib:* npm run devstart"
+  },
+  "dependencies": {
+    "compression": "^1.7.4",
+    "cookie-parser": "~1.4.4",
+    "debug": "~2.6.9",
+    "dotenv": "^16.0.1",
+    "express": "~4.16.1",
+    "helmet": "^5.1.0",
+    "http-errors": "~1.6.3",
+    "mongoose": "^6.4.2",
+    "morgan": "~1.9.1",
+    "nodemon": "^2.0.18",
+    "pug": "2.0.0-beta11"
+  }
+}
