@@ -12,7 +12,7 @@ const logger = require("morgan");
 
 const indexRouter = require("./routes/index");
 const usersRouter = require("./routes/users");
-const catalogRouter = require('./routes/catalog')
+const catalogRouter = require("./routes/catalog");
 const app = express();
 
 //Set up mongoose connection
@@ -34,7 +34,7 @@ app.use("/media", express.static(path.join(__dirname, "public")));
 
 app.use("/", indexRouter);
 app.use("/users", usersRouter);
-app.use('/catalog', catalogRouter)
+app.use("/catalog", catalogRouter);
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {
   next(createError(404));
@@ -49,6 +49,8 @@ app.use(function (err, req, res, next) {
   // render the error page
   res.status(err.status || 500);
   res.render("error");
+  /*res.status(err.status || 500)
+  res.json({error: err.message, status: err.status})*/
 });
 
 module.exports = app;
