@@ -10,7 +10,7 @@ router.get("/", book_controller.index);
 
 // Book routes
 router.get("/book/create", book_controller.book_create_get);
-router.post("book/create", book_controller.book_create_post);
+router.post("/book/create", book_controller.book_create_post);
 router.get("/book/:id/delete", book_controller.book_delete_get);
 router.post("/book/:id/delete", book_controller.book_delete_post);
 router.get("/book/:id/update", book_controller.book_update_get);
@@ -20,7 +20,7 @@ router.get("/books", book_controller.book_list);
 
 // Author routes
 router.get("/author/create", author_controller.author_create_get);
-router.post("author/create", author_controller.author_create_post);
+router.post("/author/create", author_controller.author_create_post);
 router.get("/author/:id/delete", author_controller.author_delete_get);
 router.post("/author/:id/delete", author_controller.author_delete_post);
 router.get("/author/:id/update", author_controller.author_update_get);
@@ -30,7 +30,7 @@ router.get("/authors", author_controller.author_list);
 
 // Genre routes
 router.get("/genre/create", genre_controller.genre_create_get);
-router.post("genre/create", genre_controller.genre_create_post);
+router.post("/genre/create", genre_controller.genre_create_post);
 router.get("/genre/:id/delete", genre_controller.genre_delete_get);
 router.post("/genre/:id/delete", genre_controller.genre_delete_post);
 router.get("/genre/:id/update", genre_controller.genre_update_get);
@@ -44,7 +44,7 @@ router.get(
   bookinstance_controller.bookinstance_create_get
 );
 router.post(
-  "bookinstance/create",
+  "/bookinstance/create",
   bookinstance_controller.bookinstance_create_post
 );
 router.get(
