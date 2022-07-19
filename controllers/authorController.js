@@ -2,7 +2,7 @@ const Author = require("../models/author");
 const async = require("async");
 const Book = require("../models/book");
 const { body, validationResult } = require("express-validator");
-
+const debug = require('debug')('author')
 exports.author_list = (req, res, next) => {
   Author.find()
     .sort([["family_name", "ascending"]])
@@ -94,6 +94,7 @@ exports.author_create_post = [
       });
       author.save(function (err) {
         if (err) {
+          debug('create error: '+err)
           return next(err);
         }
         res.redirect(author.url);
@@ -213,7 +214,9 @@ exports.author_update_post = [
       return;
     } else {
       Author.findByIdAndUpdate(req.params.id, author, {}, (err, theauthor) => {
-        if (err) return next(err);
+        if (err){
+          debug('update error: '+ err)
+          return next(err)}
         res.redirect(theauthor.url);
       });
     }
