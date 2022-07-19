@@ -14,3 +14,12 @@ a {
   padding: 0;
   list-style: none;
 }
+
+@media (max-width: 500px) {
+  .center-it {
+    text-align: center;
+  }
+  hr {
+    width: 20px;
+  }
+}
