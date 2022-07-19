@@ -16,6 +16,17 @@ AuthorSchema.virtual("name").get(function () {
   return fullname;
 });
 
+AuthorSchema.virtual('dob').get(function(){
+  if(this.date_of_birth)
+    return DateTime.fromJSDate(this.date_of_birth).toFormat('yyyy-MM-dd')
+  return ''
+})
+
+AuthorSchema.virtual('dod').get(function(){
+  if(this.date_of_death)
+    return DateTime.fromJSDate(this.date_of_death).toFormat('yyyy-MM-dd')
+  return ''
+})
 AuthorSchema.virtual("lifespan").get(function () {
   let lifetime_string = "";
   if (this.date_of_birth)

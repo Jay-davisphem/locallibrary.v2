@@ -317,7 +317,7 @@ exports.book_update_post = [
 
   (req, res, next) => {
     const errors = validationResult(req);
-    var book = new Book({
+    const book = new Book({
       title: req.body.title,
       author: req.body.author,
       summary: req.body.summary,
