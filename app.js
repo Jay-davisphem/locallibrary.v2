@@ -13,13 +13,14 @@ const logger = require("morgan");
 const indexRouter = require("./routes/index");
 const usersRouter = require("./routes/users");
 const catalogRouter = require("./routes/catalog");
-const compression = require('compression')
+const compression = require("compression");
+const helmet = require("helmet");
 const app = express();
 
 //Set up mongoose connection
 const mongoose = require("mongoose");
-const mongoDB =
-  "mongodb+srv://davisphem:phemmy2022@cluster0.an92mve.mongodb.net/locallibv2?retryWrites=true&w=majority";
+const = 'mongodb+srv://davisphem:phemmy2022@cluster0.an92mve.mongodb.net/locallibv2?retryWrites=true&w=majority'
+const mongoDB = process.env.MONGODB_URI || dev_db_url
 mongoose.connect(mongoDB, { useNewUrlParser: true, useUnifiedTopology: true });
 const db = mongoose.connection;
 db.on("error", console.error.bind(console, "MongoDB connection error:"));
@@ -27,7 +28,8 @@ db.on("error", console.error.bind(console, "MongoDB connection error:"));
 // view engine setup
 app.set("views", path.join(__dirname, "views"));
 app.set("view engine", "pug");
-app.use(compression())
+app.use(helmet());
+app.use(compression());
 app.use(logger("dev"));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
