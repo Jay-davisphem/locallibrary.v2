@@ -19,7 +19,7 @@ const app = express();
 
 //Set up mongoose connection
 const mongoose = require("mongoose");
-const = 'mongodb+srv://davisphem:phemmy2022@cluster0.an92mve.mongodb.net/locallibv2?retryWrites=true&w=majority'
+const dev_db_url = 'mongodb+srv://davisphem:phemmy2022@cluster0.an92mve.mongodb.net/locallibv2?retryWrites=true&w=majority'
 const mongoDB = process.env.MONGODB_URI || dev_db_url
 mongoose.connect(mongoDB, { useNewUrlParser: true, useUnifiedTopology: true });
 const db = mongoose.connection;
