@@ -1,6 +1,6 @@
 body {
   padding: 10px 50px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  font: 20px "Lucida Grande", Helvetica, Arial, sans-serif;
   background: ghostwhite;
   color: #0088ff;
 }
@@ -9,6 +9,9 @@ a {
   color: #00b7ff;
 }
 
+h1{
+  font-size: '30px';
+}
 .sidebar-nav {
   margin-top: 20px;
   padding: 0;
